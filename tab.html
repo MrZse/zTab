@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="tab.js"></script>
+</head>
+<body>
+<div id="container"></div>
+<div id="sss"></div>
+<script>
+	var container = document.getElementById('container');
+	var sss = document.getElementById('sss');
+	//上述操作为获取自己创建的dom元素。
+
+	//下面定义两个数组用于存取tab组件中需要的数据
+	var titles = ['首页','MoonYe','VinceZhang','Tencent'];
+	var titles2 = ['Home','Likes','Songs']
+	var contents = [`
+		<div>这是首页中的内容</div>
+			<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571987887101&di=d78d908892e74e54663dde14521ac7dd&imgtype=0&src=http%3A%2F%2Fimg.sj33.cn%2Fuploads%2Fallimg%2F201403%2F7-140316141152D8.png" alt="Tencent">
+		`,`
+		<div>这是MoonYe中的内容</div>
+		  <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571987821383&di=72afc2f6eb59cba252d094cdc0036c6a&imgtype=0&src=http%3A%2F%2Fimg.pconline.com.cn%2Fimages%2Fupload%2Fupc%2Ftx%2Fitbbs%2F1509%2F28%2Fc55%2F13306608_1443450331639_mthumb.jpg">
+		`,`
+		<div>这是VinceZhang中的内容</div>
+		`,`
+		<div>这是Tencent中的内容</div>
+			<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571986687389&di=c892c12c4e7398cd8ae51da5c80cd205&imgtype=0&src=http%3A%2F%2Farticle.fd.zol-img.com.cn%2Ft_s500x2000%2Fg5%2FM00%2F07%2F00%2FChMkJ1oT-5uIEcvxAAA1JVcwovcAAiW0AAlcgsAADU9788.jpg" alt="">
+		`];
+	var contents2 = [`
+		<div>这是Home中的内容</div>
+			<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571987887101&di=d78d908892e74e54663dde14521ac7dd&imgtype=0&src=http%3A%2F%2Fimg.sj33.cn%2Fuploads%2Fallimg%2F201403%2F7-140316141152D8.png" alt="Tencent">
+		`,`
+		<div>这是Likes中的内容</div>
+		  <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571987821383&di=72afc2f6eb59cba252d094cdc0036c6a&imgtype=0&src=http%3A%2F%2Fimg.pconline.com.cn%2Fimages%2Fupload%2Fupc%2Ftx%2Fitbbs%2F1509%2F28%2Fc55%2F13306608_1443450331639_mthumb.jpg">
+		`,`
+		<div>这是Songs中的内容</div>
+		`];
+
+	//调用构造函数完成组件的挂载
+	var myTab = new Tab(container,titles,contents);
+
+	var sTab = new Tab(sss,titles2,contents2);
+	sTab.setConfig({
+		cursorColor:'#f900ff',
+		activeColor:'#f900ff',
+		titleBackGroundColor: '#ffffae',
+		contentBackGroundColor:'#ffffae',
+		font:{
+			size: 20,
+			font: 'consolas',
+			color: '#ff003a'
+		}
+	})
+
+</script>
+</body>
+</html>
