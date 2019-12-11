@@ -1,20 +1,24 @@
-*{
+* {
 	margin: 0;
 	padding: 0;
 }
-html,body{
+
+html, body {
 	color: #222;
 	background: #f4f5f7;
 }
-body::-webkit-scrollbar{
-	width:0;
+
+body::-webkit-scrollbar {
+	width: 0;
 }
-ul{
+
+ul {
 	list-style: none;
 	display: flex;
 	flex-direction: row;
 }
-.tab-title{
+
+.tab-title {
 	width: 1100px;
 	margin: 0 auto;
 	padding: 0 20px;
@@ -25,7 +29,8 @@ ul{
 	border-radius: 0 0 4px 4px;
 	position: relative;
 }
-.tab-title li{
+
+.tab-title li {
 	line-height: 66px;
 	height: 66px;
 	margin-right: 16px;
@@ -33,11 +38,13 @@ ul{
 	cursor: pointer;
 	transition: border-bottom-width .2s ease;
 }
-.tab-title li > span{
+
+.tab-title li > span {
 	vertical-align: middle;
 }
-.cursor{
-	background: #00a1d6;
+
+.cursor {
+	background: #00B4CF;
 	position: absolute;
 	height: 3px;
 	width: 0;
@@ -45,20 +52,25 @@ ul{
 	bottom: -1px;
 	transition: all .2s ease;
 }
-.active{
+
+.active {
 	color: #00B4CF;
 }
-.tab-content{
+
+.tab-content {
 	width: 1100px;
+	min-height: 500px;
 	margin: 20px auto;
 	padding: 0 20px;
 	background: #FFF;
 	box-sizing: border-box;
 	border-radius: 5px 5px 0 0;
 }
-.tab-content li{
+
+.tab-content li {
 	display: none;
 }
-.tab-content li.selected{
+
+.tab-content li.selected {
 	display: block;
 }
