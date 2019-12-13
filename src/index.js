@@ -30,14 +30,6 @@ const Tab = (function() {
 			this.setCss("./main.css");//引入css样式
 			this.dom.innerHTML = this.getElementString();
 			this.titleEles = this.dom.querySelectorAll(".tab-title-item li");
-			Array.from(this.titleEles).forEach((title, index) => {
-				Array.from(title.childNodes).forEach(node => {
-					if (node.tagName) {
-						console.log(node.tagName, 2312313e3242);
-						node.classList.add(`li-index-${index}`);
-					}
-				})
-			});// 给title元素的每一个子元素添加包含index的类名，这样点击事件的target即使是子元素也可以获得索引
 			this.contentEles = this.dom.querySelectorAll(".tab-content-item li");
 			this.cursor = this.dom.querySelector(".cursor");
 			addLoadEvent(() => {// 此处放在onload事件内来执行是为了让滑条读取到的是真实的宽度数据
@@ -98,10 +90,14 @@ const Tab = (function() {
 			const list = this.dom.querySelector(".tab-title-item");
 			// 使用e.target实现事件代理
 			list.addEventListener("click", e => {
-				if (e.target.classList[0] === 'tab-title-item') {
-					return;// 点到空白区域直接return
+				let node = e.target;
+				if (node.tagName === 'UL') {
+					return; // 点击空白处直接返回
 				}
-				this.setSelected(getIndex(e.target.classList[0]));
+				while (node.tagName !== 'LI') {
+					node = node.parentNode;// 当前元素不是li元素就往上寻找父元素
+				}
+				this.setSelected(getIndex(node.classList[0]));
 				// e.path.some(item => {
 				// 	if (item.tagName === "LI") {
 				//
