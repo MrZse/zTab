@@ -94,7 +94,7 @@ const Tab = (function() {
 				if (node.tagName === 'UL') {
 					return; // 点击空白处直接返回
 				}
-				while (node.tagName !== 'LI') {
+				while (node && node.tagName !== 'LI') {
 					node = node.parentNode;// 当前元素不是li元素就往上寻找父元素
 				}
 				this.setSelected(getIndex(node.classList[0]));
