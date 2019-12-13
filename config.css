@@ -1,0 +1,16 @@
+.my-tab-title-class {
+	background: palevioletred;
+}
+
+.my-cursor-class {
+	background: purple;
+}
+
+.my-tab-content-class {
+	background: chartreuse;
+	font-size: 30px;
+	color: red;
+}
+.my-active-class {
+	color: gold;
+}

@@ -1,0 +1,34 @@
+{
+  "name": "tab-plugin",
+  "version": "1.0.0",
+  "description": "This is a tab plugin",
+  "main": "src/tab.js",
+  "dependencies": {
+    "eslint": "^6.7.2",
+    "prettier": "^1.19.1"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "scripts": {
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrZse/zTab.git"
+  },
+  "keywords": [
+    "tab",
+    "js",
+    "plugin"
+  ],
+  "author": "MrZ",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MrZse/zTab/issues"
+  },
+  "homepage": "https://github.com/MrZse/zTab#readme"
+}
