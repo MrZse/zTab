@@ -17,7 +17,7 @@
   
   
   //下面定义两个数组用于存取tab组件中需要的数据
-  var titles = ["<span>1</span><span>ABC</span>", "MoonYe", "VinceZhang", "Tencent"];
+  var titles = ["<span>1</span>ABC", "MoonYe", "VinceZhang", "Tencent"];
   var titles2 = ["Home", "Likes", "Songs"];
   var contents = [`
 		<div>这是首页中的内容</div>
@@ -44,11 +44,12 @@
   //调用构造函数完成组件的挂载
   const myTab = new Tab(container, titles, contents);
   
-  const sTab = new Tab(sss, titles2, contents2, {
+  const sTab = new Tab('#sss', titles2, contents2, {
     tabTitleClassList: ["my-tab-title-class"],
     cursorClass: "my-cursor-class",
     tabContentClassList: ["my-tab-content-class"],
-    activeClass: "my-active-class"
+    activeClass: "my-active-class",
+	  defaultSelectedIndex: 2,
   });
   myTab.addCallBacks(() => {
     console.log(1111);
@@ -64,7 +65,11 @@
   }, () => {
     console.log(33333);
   });// 传入多个参数
-  
+  sTab.addCallBacks(callBacks,() => {
+	  console.log(2222);
+  }, () => {
+	  console.log(33333);
+  }); // 传入函数与数组的组合
 </script>
 </body>
 </html>
