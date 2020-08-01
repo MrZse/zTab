@@ -17,6 +17,7 @@ const Tab = (function() {
 			this.contents = contents;// 以上两个存储用于展示的内容
 			this.selectedIndex = -1;// 被选中的index
 			this.callbacks = [];
+			this.i = 0;
 			this.config = config || {};
 			if (typeof dom === 'string') {
 				this.dom = document.querySelector(dom);
@@ -36,6 +37,10 @@ const Tab = (function() {
 				const defaultSelectedIndex = this.config.defaultSelectedIndex || 0;
 				this.setSelected(defaultSelectedIndex);// 初始化选中项为第一项
 				this.implementSwitch();
+
+				setInterval(() => {
+					this.setSelected(this.i > this.contentEles.length - 2 ? this.i = 0 && 0 : ++this.i);
+				},6000)
 			});
 		}
 
