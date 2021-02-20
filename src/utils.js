@@ -11,14 +11,17 @@ export const addLoadEvent = (func) => {
 };
 export const getN = (arr, node, n) => {
   node.style.width = arr[n].offsetWidth + 'px';
-  let sum = 20;
-  arr.forEach((item, index) => {
-    if (index < n) {
-      sum += item.offsetWidth + 16;
-    }
-  });
-  node.style.left = sum + 'px';
+  node.style.left = arr[n].offsetLeft + 'px';
 };
 export const getIndex = (str) => {
   return str.slice(9);
 };
+export const flat = (arr) => {
+  let copyArr = arr.slice();
+  while (copyArr.some(arg => {
+    return Array.isArray(arg)
+  })) {
+    copyArr = [].concat(...copyArr)
+  }
+  return copyArr;
+}
